@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findchar() {
+            var string = prompt('enter string');
+            var s = string.toLowerCase();
+            var chars = 'abcdefghijklmnopqrstuvwxyz';
+            var arr = [];
+            var charsArray = [];
+            var sortedArr;
+            var missingArray = [];
+
+            for (var i = 0; i < chars.length; i++) {
+                x = chars.substring(i, i + 1)
+                charsArray.push(x);
+            }
+
+            for (var j = 0; j < s.length; j++) {
+                y = s.substring(j, j + 1)
+                arr.push(y);
+                arr.sort();
+            }
+
+            for (var k = 0; k < charsArray.length; k++) {
+
+                flag = false;
+
+                for (var l = 0; l < arr.length; l++) {
+
+                    if (charsArray[k] == arr[l]) {
+                        flag = true;
+
+                    }
+                }
+                if (flag == false) {
+                    missingArray.push(charsArray[k]);
+                }
+
+            }
+
+            console.log(missingArray.toString())
+		alert(missingArray.toString())
+
+        }
+        findchar();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const a = []
+        const b = ['a', 'b', 'd'];
+        var r = []
+
+        function commonElements(a, b) {
+            //////////////loop over array "a"/////////////////
+            for (let i = 0; i < a.length; i++) {
+
+                ///////////////loop over array "b"///////////////////
+                for (let j = 0; j < b.length; j++) {
+
+                    //////////////////check common entries///////////////////
+                    if (a[i] === b[j]) {
+
+                        //////////////push commans in result array////////////////
+                        r.push(a[i])
+                    }
+                }
+            }
+
+            //////////////////omit repeted elements from result array if there are any //////////////////////
+            r = [...new Set(r)];
+
+            //////////////console the results////////////////////////
+            if (r.length == 0) {
+                console.log("none of the elements are common in given arrays")
+            } else {
+                console.log(r)
+            }
+        }
+        commonElements(a, b)
+    </script>
+</body>
+
+</html>

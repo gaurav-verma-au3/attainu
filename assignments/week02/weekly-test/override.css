@@ -1,0 +1,22 @@
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    height: 20.6em;
+    width: 13.9em;
+    padding: auto;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0px;
+    }

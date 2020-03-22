@@ -1,0 +1,39 @@
+.btn-group-xs > .btn, .btn-xs {
+    padding  : .25rem .4rem;
+    font-size  : .875rem;
+    line-height  : .5;
+    border-radius : .2rem;
+}
+.headingcenter{
+    text-align: center;
+}
+
+.checkboxmargin{
+    margin-left: 10px;
+}
+
+.mycardmargin{
+    margin-top: 15px;
+    margin-left: 70px;
+    width: 260px;
+    height: 387px
+}
+
+.pricecolor{
+    font-weight: 500;
+    color: coral;
+}
+
+.searchbutton{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-left: 5px;
+}
+.imglogo{
+    width: 4em;
+}
+.cardbodymargin{
+    padding:0;
+}

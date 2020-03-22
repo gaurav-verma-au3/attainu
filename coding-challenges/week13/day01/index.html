@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CountAndSay</title>
+</head>
+
+<body>
+    <script>
+        function countAndSay(n) {
+            if (n < 1 || n > 30) return "enter number between range 1-30"
+            let curr = '1'
+            for (let i = 2; i <= n; i++) {
+                let next = ''
+                for (let j = 0; j < curr.length;) {
+                    let count = 1
+                    while (curr[j] == curr[j + count])
+                        count++
+                    next += count + curr[j]
+                    j = j + count
+                }
+                curr = next
+            }
+            return curr
+        }
+        console.log(countAndSay(9))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    .counters{
+	font-weight: bold;
+      color : red;
+    }
+    .content{
+      color: black;
+    }
+    </style>
+    <title>Search Cities</title>
+</head>
+<body>
+    <div class="container-fluid bg-light">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6 mt-5 " >
+                    <img class="mb-2" src="https://i.ibb.co/r6xQJMM/search-16-64.png" alt="200px-AJAX-logo-by-gengns-svg" border="0">
+                    <h2 style= " font-family: Verdana, Geneva, Tahoma, sans-serif " >Search</h2>
+                    <div class="input-group mt-3 mb-3">
+                <input id="keyword" type="text" class="form-control  " placeholder="Enter Initials to Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              
+              </div>
+                            
+                  <div id="div01">
+                    <ol class="list-group mb-5 " id="results"> </ol>
+                  </div>
+                </div>
+            <div class="col"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+            <div class="fixed-bottom bg-secondary"><p class="text-center text-white font-weight-light mt-3 ">Designed and developed by Gaurav Verma <a class="text-white"
+                href="mailto:gauravve1@gmail.com">E-Mail - gauravve1@gmail.com</a></p></div>
+        </div>
+        
+    </div>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script>
+    $( document ).ready(function() {
+  ajaxCall();
+});
+
+ 
+
+
+var jsonstring;
+var obj;
+function ajaxCall() {
+  $.ajax({
+    url: 'https://raw.githack.com/attainu-nightingale/nightingale-course-module/master/coding-challenges/data/cities.json',
+    type: 'GET',
+    dataType: 'JSON',
+    success: function (data) {
+      jsonstring = JSON.stringify(data);
+      obj = JSON.parse(jsonstring);
+      var k;
+
+      $("#keyword").keyup(function () {
+          $('#div01').empty();
+          $('#div01').append('<ol class="list-group mb-5 " id="results"> </ol>')
+          k = this.value.toLowerCase();
+          for (var i = 0; i < obj.length; i++) {
+          if (obj[i].state.substring(0, k.length).toLowerCase() == k) {
+            $('#results').append('<span class = "counters"><li></span> <span class="content"><b>CITY</b> :' + (obj[i].name + ' <br><b>STATE</b> :' + obj[i].state) + '</span></li>').addClass("list-group-item list-group-item-success p-5")
+        } 
+        
+        if (k == '' || k == null)
+        {
+          $('#div01').empty()
+        }
+        }
+      })
+    }
+  })
+};
+    </script>
+</body>
+
+</html>
+

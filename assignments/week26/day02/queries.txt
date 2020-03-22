@@ -1,0 +1,141 @@
+
+//create schema
+*******************
+CREATE SCHEMA bank;
+
+----------------------------------------------------------------------------
+
+
+//create tables
+*******************
+CREATE TABLE bank.account(
+	id INT PRIMARY KEY NOT NULL,
+	type CHAR(10) NOT NULL,
+	branch CHAR(50) NOT NULL,
+	cust_id INT NOT NULL,
+	ac_no INT NOT NULL);
+
+
+CREATE TABLE bank.branch(
+	id INT PRIMARY KEY NOT NULL,
+	city CHAR(50) NOT NULL);
+
+CREATE TABLE bank.customer(
+	id INT PRIMARY KEY NOT NULL,
+	name CHAR(10) NOT NULL,
+	address CHAR(50) NOT NULL);
+
+CREATE TABLE bank.transactions(
+	id INT PRIMARY KEY NOT NULL,
+	account INT NOT NULL,
+	amount INT NOT NULL);
+
+CREATE TABLE bank.loan(
+	id INT PRIMARY KEY NOT NULL,
+	branch_id INT NOT NULL,
+	amount INT NOT NULL
+	cust_id INT NOT NULL);
+
+CREATE TABLE bank.deposit(
+	id INT PRIMARY KEY NOT NULL,
+	branch_id INT NOT NULL,
+	amount INT NOT NULL
+	cust_id INT NOT NULL);
+
+
+-----------------------------------------------------------------------------
+
+//inset data
+*******************
+insert into bank.account(id,type,branch,cust_id,ac_no)
+values(1,'savings','mumbai',2,123450),
+(2,'loan','banglore',1,123451),
+(3,'savings','banglore',1,123452),
+(4,'loan','delhi',3,123453),
+(5,'loan','mumbai',2,123454);
+
+insert into bank.branch(id,city)
+values(1,'banglore'),
+(2,'mumbai'),
+(3,'delhi');
+
+
+insert into bank.customer(id,name,address)
+values(1,'john','banglore'),
+(2,'ryan','mumbai'),
+(3,'jake','delhi');
+
+insert into bank.transactions(id,account,amount)
+values(1,123450,26589),
+(2,123454,55213),
+(3,123452,21156),
+(4,123451,5136);
+
+
+
+insert into bank.loan(id,branch_id,amount,cust_id)
+values(1,1,20000,1),
+(2,3,10000,3),
+(3,2,50000,2);
+
+
+
+
+insert into bank.deposit(id,branch_id,amount,cust_id)
+values(1,2,50000,2),
+(2,1,32000,1);
+
+------------------------------------------------------------------------------
+
+
+//select from tables
+*******************
+
+select * from bank.account;
+select * from bank.branch;
+select * from bank.customer;
+select * from bank.transactions;
+select * from bank.loan;
+select * from bank.deposit;
+
+------------------------------------------------------------------------------
+
+select * from bank.customer where bank.customer.address = 'banglore';
+
+------------------------------------------------------------------------------
+
+select * from bank.customer where bank.account.type IN ('savings','loan');
+
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

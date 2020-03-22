@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function replace(s) {
+
+            let result = '';
+            for (let i = 0; i < s.length;) {
+
+                let count = 1
+
+                while (s[i] == s[i + count])
+                    count++
+
+                if (count == 1) result += s[i]
+
+                else result += s[i] + count
+
+                i = i + count
+
+            }
+
+            return result
+
+        }
+        console.log(replace("ttttttgggfffd"))
+    </script>
+</body>
+
+</html>

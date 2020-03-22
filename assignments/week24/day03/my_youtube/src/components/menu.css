@@ -1,0 +1,14 @@
+.sidebar {
+    height:  100vh
+}
+
+.title-image {
+    height: 10vh;
+    width: 100%;
+}
+
+.sidebar-button {
+    list-style-type: none;
+    padding: 0;
+}
+

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row mt-5 d-flex justify-content-center ">
+        <div class="col-10 d-flex justify-content-center">
+            <div class="card-columns">
+                {{#each data}}
+                <div class="card mt-4 ml-1 mr-1 " style="width: 18rem;">
+                    <img class="card-img-top" style="height : 17.9rem;" src="{{this.link}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.firstname}} {{this.lastname}}</h5>
+                        <a href="mailto:{{this.email}}">Send Mail</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Gender : {{this.gender}}</li>
+                        <li class="list-group-item">Location : {{this.city}}</li>
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

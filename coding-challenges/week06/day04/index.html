@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    function check(){
+        var key = prompt("enter any string");
+        var string = key.toLowerCase();
+        var sLength = (string.length)/2;
+        var string1 = [];
+        var string2 = [];
+        var char1;
+        var char2;
+        console.log(sLength)
+        for ( var i = 0; i<sLength;  i++) {
+            char1 = string.substring(i,i+1)
+            string1.push(char1)
+            console.log(string1)
+        }
+        console.log(sLength)
+        for (var k = sLength; k < string.length; k++){
+            char2 = string.substring(k, k+1)
+                string2.splice(0 ,0 , char2)
+            console.log(string2); 
+    }
+
+        if(JSON.stringify(string1)==JSON.stringify(string2)){
+            alert("string is palindrome")
+        }
+        else{
+            alert("string is not a palindrome")
+        }
+
+    }
+
+        check();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+        <h1>
+            welcome to rendered page
+        </h1>
+            <div></div>
+            
+        <script>
+        
+        var urlAddress = "Input: " +location.origin + "/" + window.location.search
+        if (window.location.search !== ""){
+        var queries = {};
+        $.each(window.location.search.substr(1).split('&'),function(c,q){
+        var i = q.split('=');
+        queries[i[0].toString()] = i[1].toString();
+        });
+        var text = JSON.stringify(queries)
+        var arr = [urlAddress, text]
+        console.log(queries);
+        $('div').html(arr[0]+",<br/> Output: " + arr[1] );
+        }
+        else
+        {
+            $('div').html("Input : "+ urlAddress + ",<br/> Output: Missing URL parameters!");
+        }
+        </script>    
+</body>
+</html>
+
+
+
+
+

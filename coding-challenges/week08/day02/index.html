@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function pyramid(n) {
+            var l = ''
+            for (var r = n; r >= 1; r--) {
+
+                for (var c = 1; c <= n; c++) {
+
+                    if (c <= r - 1)
+                        l = l + ' '
+                    else {
+                        l = l + '* '
+                    }
+                }
+                l = l + '\n'
+            }
+            return l
+        }
+
+        console.log(pyramid(5));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="{{script}}"></script>
+    <title>SignUp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main .mainRow .left {
+            height: 100vh;
+        }
+
+
+        form {
+            margin: auto;
+        }
+
+        .login-box {
+            width: 65%;
+            height: 100%;
+            position: absolute;
+            color: white;
+            margin-left: 12%;
+            font-size: 0.8rem
+        }
+
+        #signup-box h1 {
+            font - family: "Lobster", cursive;
+            color: black;
+            float: left;
+            font-size: 2.5em;
+            border-bottom: 0.2em solid #4caf50;
+            margin-bottom: 1em;
+            padding: 0.5em 0 0.5em 0em;
+            z-index: 5;
+        }
+
+        #signup-box {
+            padding - top: 15vh;
+        }
+
+        .textbox {
+            width: 100%;
+            font-size: 1em;
+            overflow: hidden;
+            padding: 0.5em 0.1em;
+            border-bottom: 0.2em solid #4caf50;
+        }
+
+        .textbox i {
+            width: 2em;
+            text-align: center;
+        }
+
+        .textbox input {
+            border: none;
+            outline: none;
+            background: none;
+            color: black;
+            font-size: 1em;
+            width: 80%;
+            float: left;
+            margin: 0.2em;
+        }
+
+        label {
+            color: black;
+        }
+
+        .sub-btn {
+            width: 95%;
+            background: none;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0.5em 0;
+            border-radius: 20px;
+        }
+
+        .box-black {
+            background - color: black;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            opacity: 0.6;
+        }
+
+        input:hover::placeholder {
+            color: Gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid main">
+        <div class="row mainRow ">
+            <div class="col-3 left bg-dark border-right text-white">
+                <h3></h3>
+                <p>{{ data.name }}</p>
+                <p>{{ data.email }}</p>
+                <p>{{ pass }}</p>
+                <p> {{ subscribed }} </p>
+                <a class="btn btn-sm btn-danger" href="/logout">Logout</a>
+            </div>
+            <div class="col-9 ">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

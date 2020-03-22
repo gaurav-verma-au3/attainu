@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        #tweet,
+        #username,
+        #submit {
+            border-radius: 20px;
+
+        }
+
+        #tweet {
+            height: 100px;
+
+        }
+
+        ul::-webkit-scrollbar {
+            width: 0 !important;
+        }
+        #keyword{
+            border-radius: 20px;
+            visibility: hidden;
+        }
+
+    </style>
+    <title>Homepage</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-dark justify-content-between">
+        <img src="https://i.ibb.co/tzV48Mf/twitter-3-64.png" alt="twitter-3-64" border="0" style="padding: 5px;">
+        <button type="button" class="btn btn-warning"><a style="text-decoration: none;color:black;" href="/logout">Logout</a></button>
+    </nav>
+
+    <div class="container-fluid bg-dark">
+
+
+
+        <div class="row">
+
+            <div class="col-6 d-flex justify-content-center align-items-center" style="width: 100%; height: 80vh;">
+                <form>
+                    <div class="form-group">
+                        <input id="username" name="Name" type="text" class="form-control" placeholder="Username">
+                        <p class="text-white  mt-5">Tweet : </p>
+                        <input id="tweet" name="Tweet" type="text" class="form-control mt-1" placeholder="">
+                        <button id="submit" type="button" class="btn btn-warning mt-3">Submit</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-6 d-flex justify-content-center align-items-center" style="width: 100%; height: 80vh;">
+                <div style="margin-top:10vh; margin-bottom:10vh;">
+            <input id="keyword" class="form-control mb-4 " type="search" placeholder="Search" aria-label="Search">
+
+                    <div id="tweets">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-dark text-white fixed-bottom" style="height:10vh;">
+            <p class="text-center mt-4 ">Designed and developed by Gaurav Verma <a
+                    href="mailto:gauravve1@gmail.com">E-Mail - gauravve1@gmail.com</a></p>
+        </footer>
+    </div>
+
+
+    <script>
+        function appendalert() {
+            $("#submit").removeClass("btn-warning").addClass("btn-success").text('Successfully Posted')
+        }
+
+        function flash() {
+            setTimeout(function () {
+                $("#submit").removeClass("btn-success").addClass("btn-warning").text('Submit')
+            }, 2000);
+        }
+
+
+        function ajaxcall() {
+            var dataObj = JSON.stringify(({
+                "Name": $('#username').val().toString(),
+                "Tweet": $('#tweet').val().toString()
+            }))
+            $.ajax({
+                url: 'http://localhost:3000/postTweet',
+                type: 'POST',
+                contentType: "application/json",
+                data: dataObj,
+                processData: false,
+                success: function () {
+                    appendalert();
+                    flash();
+                }
+            });
+            appendalert();
+            flash();
+
+        }
+
+        function refresh() {
+            $('#tweets').empty();
+            $('#tweets').append(
+                '<ul class="list-group w-100 mx-auto" id="list" style="width: 100%; height: 65vh; overflow: auto">')
+            $.ajax({
+                url: '/refresh',
+                method: 'GET',
+                success: function (data) {
+                    var stringData = JSON.stringify(data);
+                    var objData = JSON.parse(stringData);
+                    for (i = 0; i < objData.length; i++) {
+                        $('#list').append(
+                            '<li class="list-group-item list-group-item-warning text-right mt-2 mb-2" style=" line-height: 3px;border-radius: 20px; "><p> Name : ' +
+                            objData[i].Name + '</p><p> Tweet : ' + objData[i].Tweet + '</p></li>')
+                    }
+                }
+            })
+        }
+
+        function search() {
+            $('#tweets').empty();
+            $('#tweets').append(
+                '<ul class="list-group w-100 mx-auto" id="list" style="width: 100%; height: 65vh; overflow: auto">')
+            $.ajax({
+                url: '/refresh',
+                method: 'GET',
+                success: function (data) {
+                    var stringData = JSON.stringify(data);
+                    var objData = JSON.parse(stringData);
+                    var keyword = $('#keyword').val().toLowerCase();
+                    var klength = keyword.length;
+                    for (i = 0; i < objData.length; i++) {
+                        if (objData[i].Name.substring(0, klength).toLowerCase() == keyword || objData[i]
+                            .Tweet.substring(0, klength).toLowerCase() == keyword) {
+                            $('#list').append(
+                                '<li class="list-group-item list-group-item-warning text-right mt-2 mb-2" style=" line-height: 3px;border-radius: 20px; "><p> Name : ' +
+                                objData[i].Name + '</p><p> Tweet : ' + objData[i].Tweet + '</p></li>')
+                        }
+                        if (klength == "" || klength == null) {
+                            $('#tweets').empty();
+                        }
+                    }
+                }
+            })
+        }
+
+
+        $('#submit').click(function () {
+            ajaxcall()
+            refresh()
+            $('#keyword').css({'visibility': 'visible'})
+
+        })
+
+        $('#keyword').keyup(function () {
+            search()
+        })
+    </script>
+</body>
+
+</html>

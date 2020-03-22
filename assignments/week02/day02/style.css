@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.icon{
+    margin-top: 10px;
+    width: 25px;
+}
+div{
+    display: flex;
+    align-content: space-around;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    position: relative;
+    display: block;
+    background-image: url("https://templates.utah.edu/_main-v2/_images/header/background/teal.jpg");
+    width: 100%;
+    height: 15%;
+    position: relative;
+    top: 0px;
+}
+
+.pageimage{
+    height: 120px;
+}
+
+h1{
+height: 50px;
+font-family: 'Calibri';
+color: aliceblue;
+border: solid 5px #FCCD65;
+border-radius: 10px;
+padding-top: 5px;
+border-top-width: 7px
+}
+#navcontainer{
+    display: flex;
+    height: 400px;
+    width: 20%;
+    margin: auto;
+    background-color: #258d70;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.icon-container{
+
+    float: left;
+    width: 5%;
+    margin-left: 5px;
+
+}
+.navlinks{
+    width: 15%
+}
+
+li ul{
+    line-height: 50px;
+}
+
+ul{
+    list-style-type: none;
+}
+#maincontainer
+{
+    height: 400px;
+    width: 70%;
+    margin: auto;
+    border: 2px solid black;
+    float: right;
+    align-content: space-around;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+th {
+    background-color: #258d70;
+    color: white;
+    border: 1px solid black;
+    line-height: 50px;
+  }
+
+  th,td{
+      text-align: center;
+      line-height: 32px;
+  }
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+.adcontainer{
+    display: block;
+    font-size: 25px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#footer{
+    display: block;
+    background-image: url("https://templates.utah.edu/_main-v2/_images/header/background/teal.jpg");
+    width: 100%;
+    height: 15%;
+}
+.footertext{
+    text-align: right;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+a:link{
+    color: black;
+}
+
+a:hover{
+    color: #19332c;
+}

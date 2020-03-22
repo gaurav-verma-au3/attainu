@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function convert (seconds)
+        {
+          var value = prompt("please enter seconds");
+          var seconds = parseInt(value);            
+
+            var d = Math.floor(seconds/86400);
+            var a = seconds%86400;
+            var h = Math.floor(a/3600);
+            var b = seconds%3600;
+            var m = Math.floor(b/60);
+            var s = seconds%60
+            console.log( d+ ":" + h + ":" + m + ":" + s +  " (d:h:m:s)")
+            
+        }
+        convert();
+    </script>
+</body>
+</html>

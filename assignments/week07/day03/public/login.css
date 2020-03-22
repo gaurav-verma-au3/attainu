@@ -1,0 +1,79 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .h {
+        height: 100vh;
+    }
+
+    html,
+    body {
+
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+        height: 100vh;
+        align-content: center;
+    }
+
+    .card {
+        height: 370px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 400px;
+        background-color: transparent !important;
+        border: none;
+    }
+
+    .card-header {
+        background-color: transparent;
+        border-bottom: none;
+    }
+
+    .card-header h3 {
+        color: white;
+        background-color: transparent !important;
+    }
+
+    .social_icon {
+        position: absolute;
+        right: 20px;
+        top: -45px;
+    }
+
+    .input-group-prepend span {
+        width: 50px;
+        background-color: #FFC312;
+        color: black;
+        border: 0 !important;
+    }
+
+    input:focus {
+        outline: 0 0 0 0 !important;
+        box-shadow: 0 0 0 0 !important;
+
+    }
+
+
+    #login,
+    #register {
+        border-radius: 20px;
+    }
+
+
+    .links {
+        color: white;
+        background-color: transparent !important;
+    }
+
+    .links a {
+        margin-left: 4px;
+    }
+
+    .card-footer {
+        background-color: transparent !important;
+        border: none;
+    }

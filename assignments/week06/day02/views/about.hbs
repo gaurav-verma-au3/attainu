@@ -1,0 +1,31 @@
+<div class="row height-70 ml-5">
+    <div class="col-6 mt-5 ">
+        <h3 class="" >{{profileArray.Name}}</h3>
+        <p class="para">{{profileArray.About}}</p>
+    <h3 class="">Movies I like -</h3>
+        <div class="row list">
+            <table class="ml-5">
+            {{#each profileArray.Movies}}
+            <tr>
+                <td>{{this.movie}}</td>
+                <td><a class="tableLinks" href="{{this.imdb}}" target="blank">IMDB</a></td>
+                <td><a class="tableLinks" href="{{this.trailer}}" target="blank">Watch Trailer</a></td>
+            </tr>
+            {{/each}}
+            </table>
+        </div>
+    </div>
+
+    <div class="col-6 justify-content-center align-items-center ">
+        <h2 class="text-center mt-5">Skills</h2>
+        <img class="skills " src="https://i.ibb.co/v1h6Rx8/html.png" alt="html" border="0">
+        <img class="skills" src="https://i.ibb.co/vjPBKd7/css.png" alt="css" border="0">
+        <img class="skills" src="https://i.ibb.co/jWxLPX5/bootstrap.png" alt="bootstrap" border="0">
+        <img class="skills" src="https://i.ibb.co/z884fF4/js.png" alt="js" border="0">
+        <img class="skills" src="https://i.ibb.co/3yKvmDV/nodejs.png" alt="nodejs" border="0">
+    </div>
+
+</div>
+
+
+

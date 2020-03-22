@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker&display=swap');
+
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Kalam', cursive; */
+
+
+* {
+    font-family: 'Kalam', cursive;
+}
+
+.title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4.5rem;
+    border-bottom: 2px solid whitesmoke;
+
+}
+
+
+.app {
+    height: 100vh;
+}
+
+.add-btn {
+    border-radius: 25px;
+}
+
+
+.add-input {
+    border-radius: 25px;
+}
+
+.list {
+    margin-left: 30%;
+    margin-right: 30%;
+}

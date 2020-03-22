@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5 bg-dark">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+
+			</div>
+			<div class="card-body">
+				<form action="/loginauth" method="POST">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" name="username" placeholder="username">
+
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" autocomplete="password" name="password"
+							placeholder="password">
+					</div>
+
+					<div class="form-group">
+						<input id="login" type="submit" value="Login" class="btn float-right btn-warning">
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

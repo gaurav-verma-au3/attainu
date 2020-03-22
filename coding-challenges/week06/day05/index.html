@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var string = prompt("enter string")
+    var l = string.length
+    var char;
+    var cString = [];
+    for (var i = 0; i<l; i++){
+        char = string.substring(i,(i+1))
+        if (char == "z"){char = "`"}
+        if(char == "Z"){char = "@"}
+        Char = String.fromCharCode(char.charCodeAt() + 1);
+        cString.push(Char.toString());
+        
+    }
+    alert(cString.join(""))
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.app {
+  margin: 0px;
+  padding: 0px;
+  background-color: aliceblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calcBody {
+  width: 50%;
+  margin: auto;
+  height: 70vh;
+}

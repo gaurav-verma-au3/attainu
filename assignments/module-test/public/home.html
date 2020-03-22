@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        /* font-family: 'Poppins', sans-serif;
+font-family: 'Lobster', cursive; */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main .mainRow .left {
+            height: 100vh;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right h1 {
+            font-size: 5rem;
+            font-family: 'Lobster', cursive;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid main">
+        <div class="row mainRow ">
+            <div class="col-3 left bg-dark border-right">
+                <a class="btn btn-light mx-2 " href="/login">Login</a>
+                <a class="btn btn-light mx-2 " href="/signup">SignUp</a>
+            </div>
+            <div class="col-9 bg-secondary right">
+                <h1>Welcome</h1>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

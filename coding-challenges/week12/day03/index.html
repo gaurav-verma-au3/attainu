@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function frequency(a) {
+        result = {};
+        //iterating over array
+        for (var i = 0; i < a.length; i++) {
+            //check if key is present in the object
+            if (result[a[i]] == undefined || null)
+                //set a key in result object and set initial value as frequency to 0
+                result[a[i]] = 0;
+            //increasing frequency by one on basis of number of accurances
+            ++result[a[i]];
+        }
+        //console result
+        console.log(result)
+    }
+    // function call
+    frequency(["this", "that", "this", "that"])
+</script>
+
+</html>

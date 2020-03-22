@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Calibri;
+}
+#footer{
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    background-color: indianred;
+}
+#left{
+    background-color: white;
+    float: left;
+    width: 50%;
+    height: 496px;
+}
+#right{
+    float: right;
+    width: 50%;
+}
+header{
+    background-color: indianred;
+}
+nav{
+    display: block;
+    background-color: indianred;
+}
+a {
+    font-weight: bold;
+    color: black;
+}
+.tab{
+    margin-left: 50px;
+}
+.initial-word{
+    font-size: 30px;
+}
+.middle{
+    text-align: center;
+}
+h1 {
+    font-size: 45px;
+    font-color: black;
+}
+ul{
+   list-style-type: none; 
+}
+ul li{
+    display: inline-block;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function rev(n) {
+            var sign = n > 0 ? 1 : n == 0 ? 0 : -1;
+            if (sign == -1) n = n * sign
+            var revNum = 0;
+            while (n > 0) {
+                revNum = (revNum * 10) + (n % 10);
+                n = Math.floor(n / 10);
+            }
+            return revNum * sign;
+        }
+        console.log(rev(-1200124));
+    </script>
+</body>
+
+</html>

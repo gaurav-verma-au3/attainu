@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.card{
+    background-color: #F9A825;
+    border: solid 5px black;
+    border-radius: 10px;
+}
+.breakpoint{
+    border-right: 5px solid black;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .breakpoint{
+        border-bottom: 5px solid black;
+        border-right: 0px;
+    }
+}

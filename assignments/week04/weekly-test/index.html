@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+					*{
+						font-family: 'Noto Sans JP', sans-serif;
+					}
+        table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+td {
+  width: 100% ;
+}
+    #results {
+        margin-bottom: 4rem;
+}
+
+</style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #cfb997">
+        
+        <div class="row">
+            <div class="col-1">
+
+            </div>
+            <div class="col-10 mt-4">
+               
+                <img class="float-left mt-2 ml-3 " style="height: 100px" src="https://i.ibb.co/nDk1D50/books-128.png" alt="literature-128" border="0">
+								<h1 class="mt-4" >The Library</h1>
+                    
+                
+                <div class="input-group input-group-mb">
+                   <input id="keyword" type="text" class="form-control mt-4" aria-label="Large" aria-describedby="inputGroup-sizing-mb">
+                </div>
+                <div id="autohide">
+                <table  class="table  table-bordered table-dark mt-3 text-center">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Origin</th>
+                            <th scope="col">Language</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Pages</th>
+                            <th scope="col">Year</th>
+                        </tr>
+                </table>
+                </div>
+								
+                <table id="results" class="table table-bordered table-dark mt-3 text-center ">
+
+                </table>
+       
+                <div class="alert alert-dark fixed-bottom mb-0 text-white text-center bg-dark" role="alert">
+                    Designed and developed by Gaurav Verma <a class="text-white" href="mailto:gauravve1@gmail.com" class="alert-link">E-Mail - gauravve1@gmail.com</a>
+                  </div>
+            </div>
+            
+            <div class="col-1">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+        
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script>
+    $( document ).ready(function() {
+  ajaxCall();
+	$("#autohide").css("visibility","hidden");
+});
+
+var jsonstring;
+var obj;
+function ajaxCall() {
+  $.ajax({
+    url: 'https://raw.githack.com/attainu-nightingale/nightingale-course-module/master/assignments/data/books.json',
+    type: 'GET',
+    dataType: 'JSON',
+    success: function (data) {
+      jsonstring = JSON.stringify(data);
+      obj = JSON.parse(jsonstring);
+      var k;
+      var slength;
+      $("#keyword").keyup(function () {
+				$("#results").empty();
+				
+        k = this.value;
+        slength = k.length;
+          for (var i = 0, n=1; i < obj.length; i++) {
+          if (obj[i].language.substring(0, slength).toLowerCase() === k.toLowerCase())
+					 {$("#autohide").css("visibility","visible"),
+            $('#results').append('<tr><td scope="col">' + n++ + '</td><td scope="col">' + obj[i].title + '</td><td scope="col">' + obj[i].author + '</td><td scope="col">' + obj[i].country + '</td><td scope="col">' + obj[i].language + '</td><td scope="col"><a src="'+obj[i].link+'">Readmore</a></td><td scope="col">' + obj[i].pages + '</td><td scope="col">'+ obj[i].year + '</td></tr>')
+        }
+					if(slength == 0)
+					{
+					$("#results").empty(),($("#autohide").css("visibility","hidden"))
+					}
+				
+        
+				}
+      })
+    }
+  })
+};
+
+    </script>
+</body>
+</html>
